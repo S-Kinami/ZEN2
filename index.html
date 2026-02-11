@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apple Watch Ultra 3 vs Garmin fēnix 8 Pro | 究極の比較</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&family=Oswald:wght@400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0f;
+      --bg-card: #12121a;
+      --bg-card-alt: #1a1a28;
+      --accent-apple: #ff6b3d;
+      --accent-garmin: #00d4aa;
+      --text-primary: #f0f0f5;
+      --text-secondary: #8888a0;
+      --text-dim: #55556a;
+      --border: #2a2a3a;
+      --glow-apple: rgba(255, 107, 61, 0.15);
+      --glow-garmin: rgba(0, 212, 170, 0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(ellipse at 30% 40%, var(--glow-apple) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 60%, var(--glow-garmin) 0%, transparent 50%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes bgPulse {
+      0% { transform: scale(1) rotate(0deg); }
+      100% { transform: scale(1.1) rotate(3deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.2s;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 6vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.5s;
+    }
+
+    .hero h1 .vs {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.35em;
+      letter-spacing: 0.5em;
+      color: var(--text-dim);
+      margin: 0.5em 0;
+    }
+
+    .hero h1 .apple-name {
+      background: linear-gradient(135deg, var(--accent-apple), #ff9a6c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero h1 .garmin-name {
+      background: linear-gradient(135deg, var(--accent-garmin), #6cf0d0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 1.5rem auto 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 0.8s;
+    }
+
+    .hero-cta {
+      opacity: 0;
+      animation: fadeUp 0.8s ease forwards 1.1s;
+    }
+
+    .hero-cta a {
+      display: inline-block;
+      padding: 0.9rem 2.5rem;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      color: var(--text-primary);
+      text-decoration: none;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+    }
+
+    .hero-cta a:hover {
+      background: var(--text-primary);
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+      animation: bounce 2s infinite;
+    }
+
+    .scroll-indicator span {
+      display: block;
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, var(--text-dim), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(10px); }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 5rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.4em;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin-bottom: 3rem;
+      line-height: 1.2;
+    }
+
+    /* ── OVERVIEW CARDS ── */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .overview-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .overview-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .overview-card.apple-card {
+      border-color: rgba(255,107,61,0.2);
+    }
+
+    .overview-card.apple-card:hover {
+      box-shadow: 0 20px 60px var(--glow-apple);
+    }
+
+    .overview-card.garmin-card {
+      border-color: rgba(0,212,170,0.2);
+    }
+
+    .overview-card.garmin-card:hover {
+      box-shadow: 0 20px 60px var(--glow-garmin);
+    }
+
+    .overview-card .card-brand {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      margin-bottom: 0.5rem;
+    }
+
+    .apple-card .card-brand { color: var(--accent-apple); }
+    .garmin-card .card-brand { color: var(--accent-garmin); }
+
+    .overview-card .card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .overview-card .card-price {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .apple-card .card-price { color: var(--accent-apple); }
+    .garmin-card .card-price { color: var(--accent-garmin); }
+
+    .card-highlights {
+      list-style: none;
+    }
+
+    .card-highlights li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .card-highlights li::before {
+      content: '→';
+      font-size: 0.8rem;
+    }
+
+    .apple-card .card-highlights li::before { color: var(--accent-apple); }
+    .garmin-card .card-highlights li::before { color: var(--accent-garmin); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 1rem;
+    }
+
+    .comparison-table thead th {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: var(--bg-dark);
+      z-index: 10;
+    }
+
+    .comparison-table thead th:first-child {
+      text-align: left;
+      width: 30%;
+    }
+
+    .comparison-table thead th:nth-child(2) {
+      color: var(--accent-apple);
+    }
+
+    .comparison-table thead th:nth-child(3) {
+      color: var(--accent-garmin);
+    }
+
+    .comparison-table tbody tr {
+      transition: background 0.2s ease;
+    }
+
+    .comparison-table tbody tr:hover {
+      background: var(--bg-card);
+    }
+
+    .comparison-table td {
+      padding: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 0.9rem;
+      vertical-align: top;
+    }
+
+    .comparison-table td:first-child {
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+    }
+
+    .comparison-table td:nth-child(2),
+    .comparison-table td:nth-child(3) {
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    .comparison-table .category-row td {
+      padding-top: 2rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 2px solid var(--border);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--text-dim);
+    }
+
+    .winner-apple {
+      color: var(--accent-apple) !important;
+      font-weight: 700;
+    }
+
+    .winner-garmin {
+      color: var(--accent-garmin) !important;
+      font-weight: 700;
+    }
+
+    /* ── BAR CHART ── */
+    .chart-section {
+      margin-top: 3rem;
+    }
+
+    .bar-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .bar-item {
+      position: relative;
+    }
+
+    .bar-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .bar-tag {
+      font-size: 0.7rem;
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 28px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 12px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--bg-dark);
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .bar-fill.apple-fill {
+      background: linear-gradient(90deg, var(--accent-apple), #ff9a6c);
+    }
+
+    .bar-fill.garmin-fill {
+      background: linear-gradient(90deg, var(--accent-garmin), #6cf0d0);
+    }
+
+    .bar-fill.animated {
+      /* width set by JS */
+    }
+
+    /* ── VERDICT ── */
+    .verdict-section {
+      padding-bottom: 6rem;
+    }
+
+    .verdict-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .verdict-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--border);
+    }
+
+    .verdict-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .verdict-card.apple-verdict {
+      border-color: rgba(255,107,61,0.25);
+    }
+
+    .verdict-card.apple-verdict h3 {
+      color: var(--accent-apple);
+    }
+
+    .verdict-card.garmin-verdict {
+      border-color: rgba(0,212,170,0.25);
+    }
+
+    .verdict-card.garmin-verdict h3 {
+      color: var(--accent-garmin);
+    }
+
+    .verdict-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    .verdict-card ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .verdict-card ul li {
+      padding: 0.4rem 0;
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    .verdict-card ul li::before {
+      content: '✓ ';
+    }
+
+    .apple-verdict ul li::before { color: var(--accent-apple); }
+    .garmin-verdict ul li::before { color: var(--accent-garmin); }
+
+    /* ── TAB SWITCHER ── */
+    .tab-bar {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      max-width: 500px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 0.8rem 1.5rem;
+      background: transparent;
+      border: none;
+      color: var(--text-dim);
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .tab-btn.active {
+      background: var(--text-primary);
+      color: var(--bg-dark);
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-dim);
+      font-size: 0.75rem;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .overview-grid,
+      .verdict-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-table td,
+      .comparison-table th {
+        padding: 0.7rem 0.5rem;
+        font-size: 0.78rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .overview-card {
+        padding: 2rem 1.5rem;
+      }
+
+      .bar-tag {
+        width: 45px;
+        font-size: 0.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">2025 Premium Smartwatch Showdown</p>
+      <h1>
+        <span class="apple-name">Apple Watch Ultra 3</span>
+        <span class="vs">— versus —</span>
+        <span class="garmin-name">Garmin fēnix 8 Pro</span>
+      </h1>
+      <p class="hero-sub">
+        2つの最強アウトドアスマートウォッチを徹底比較。<br>
+        あなたの冒険にふさわしい1台はどちらか。
+      </p>
+      <div class="hero-cta">
+        <a href="#overview">比較を見る</a>
+      </div>
+    </div>
+    <div class="scroll-indicator"><span></span></div>
+  </header>
+
+  <!-- ── OVERVIEW ── -->
+  <section id="overview">
+    <p class="section-label reveal">Overview</p>
+    <h2 class="section-title reveal">それぞれの個性</h2>
+
+    <div class="overview-grid reveal">
+      <div class="overview-card apple-card">
+        <p class="card-brand">Apple</p>
+        <h3 class="card-name">Watch Ultra 3</h3>
+        <p class="card-price">$799</p>
+        <ul class="card-highlights">
+          <li>49mm チタニウムケース</li>
+          <li>最大 42時間 バッテリー（通常使用）</li>
+          <li>5G セルラー対応</li>
+          <li>衛星経由 緊急SOS &amp; メッセージ</li>
+          <li>S10チップ / サファイアクリスタル</li>
+          <li>WR100 防水（40m ダイビング対応）</li>
+          <li>高血圧通知 / 睡眠スコア</li>
+          <li>Apple エコシステムとの深い統合</li>
+        </ul>
+      </div>
+
+      <div class="overview-card garmin-card">
+        <p class="card-brand">Garmin</p>
+        <h3 class="card-name">fēnix 8 Pro</h3>
+        <p class="card-price">$1,199〜</p>
+        <ul class="card-highlights">
+          <li>47mm / 51mm チタニウムケース</li>
+          <li>最大 27日間 バッテリー（51mm AMOLED）</li>
+          <li>LTE + 衛星 inReach 通信</li>
+          <li>双方向メッセージ &amp; SOS</li>
+          <li>AMOLED / MicroLED ディスプレイ</li>
+          <li>10ATM 防水（40m ダイブ対応）</li>
+          <li>ECGアプリ / HRV / Pulse Ox</li>
+          <li>TopoActive地図 / マルチバンドGNSS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPECS COMPARISON ── -->
+  <section id="specs">
+    <p class="section-label reveal">Specifications</p>
+    <h2 class="section-title reveal">スペック比較</h2>
+
+    <div class="tab-bar reveal">
+      <button class="tab-btn active" onclick="switchTab('basic')">基本スペック</button>
+      <button class="tab-btn" onclick="switchTab('sports')">スポーツ機能</button>
+      <button class="tab-btn" onclick="switchTab('smart')">スマート機能</button>
+    </div>
+
+    <div id="tab-basic" class="tab-content active reveal">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>Apple Watch Ultra 3</th>
+            <th>Garmin fēnix 8 Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="category-row"><td colspan="3">デザイン &amp; ビルド</td></tr>
+          <tr>
+            <td>ケースサイズ</td>
+            <td>49mm</td>
+            <td>47mm / 51mm</td>
+          </tr>
+          <tr>
+            <td>素材</td>
+            <td>航空宇宙グレード チタニウム</td>
+            <td>チタニウムベゼル + サファイア</td>
+          </tr>
+          <tr>
+            <td>重量</td>
+            <td>約 61.4g</td>
+            <td>約 78g（47mm）/ 約 97g（51mm）</td>
+          </tr>
+          <tr>
+            <td>防水性能</td>
+            <td>WR100（100m）</td>
+            <td>10ATM（100m）</td>
+          </tr>
+          <tr>
+            <td>MIL規格</td>
+            <td>MIL-STD-810H</td>
+            <td>MIL-STD-810H相当</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">ディスプレイ</td></tr>
+          <tr>
+            <td>タイプ</td>
+            <td>LTPO3 OLED</td>
+            <td>AMOLED / MicroLED</td>
+          </tr>
+          <tr>
+            <td>最大輝度</td>
+            <td class="winner-apple">3,500 nits</td>
+            <td>2,000 nits（AMOLED）<br>4,500 nits（MicroLED）</td>
+          </tr>
+          <tr>
+            <td>常時表示</td>
+            <td>○（1Hz リフレッシュ）</td>
+            <td>○</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">バッテリー</td></tr>
+          <tr>
+            <td>通常使用</td>
+            <td>最大 42時間</td>
+            <td class="winner-garmin">最大 15日（47mm）/ 27日（51mm）</td>
+          </tr>
+          <tr>
+            <td>省電力モード</td>
+            <td>最大 72時間</td>
+            <td class="winner-garmin">大幅に延長可能</td>
+          </tr>
+          <tr>
+            <td>GPS使用時</td>
+            <td>約 12〜17時間</td>
+            <td class="winner-garmin">最大 26時間（全衛星）</td>
+          </tr>
+          <tr>
+            <td>充電速度</td>
+            <td class="winner-apple">80%まで約60分（高速充電）</td>
+            <td>専用充電器</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">接続 &amp; 通信</td></tr>
+          <tr>
+            <td>セルラー</td>
+            <td class="winner-apple">5G 対応</td>
+            <td>LTE-M</td>
+          </tr>
+          <tr>
+            <td>衛星通信</td>
+            <td>緊急SOS + メッセージ（2年無料）</td>
+            <td class="winner-garmin">inReach（双方向メッセージ + SOS + 通話）</td>
+          </tr>
+          <tr>
+            <td>GPS</td>
+            <td>デュアル周波数 L1/L5</td>
+            <td class="winner-garmin">マルチバンドGNSS + SatIQ</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="tab-sports" class="tab-content">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>Apple Watch Ultra 3</th>
+            <th>Garmin fēnix 8 Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="category-row"><td colspan="3">ランニング</td></tr>
+          <tr>
+            <td>カスタムワークアウト</td>
+            <td>○</td>
+            <td>○</td>
+          </tr>
+          <tr>
+            <td>ランニングダイナミクス</td>
+            <td>基本的な指標</td>
+            <td class="winner-garmin">高度な分析（接地時間、上下動等）</td>
+          </tr>
+          <tr>
+            <td>ランニングエコノミー</td>
+            <td>―</td>
+            <td class="winner-garmin">○（新機能）</td>
+          </tr>
+          <tr>
+            <td>Workout Buddy</td>
+            <td class="winner-apple">○（AI搭載）</td>
+            <td>―</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">アウトドア &amp; ナビゲーション</td></tr>
+          <tr>
+            <td>地図表示</td>
+            <td>トレイル地図（米国）</td>
+            <td class="winner-garmin">TopoActive 地図（全世界）</td>
+          </tr>
+          <tr>
+            <td>Backtrack / ルート</td>
+            <td>○（自動記録）</td>
+            <td class="winner-garmin">○（ルーティング + 周回コース生成）</td>
+          </tr>
+          <tr>
+            <td>LEDフラッシュライト</td>
+            <td>―</td>
+            <td class="winner-garmin">○（内蔵）</td>
+          </tr>
+          <tr>
+            <td>ダイビング</td>
+            <td>ダイブコンピュータ内蔵（40m）</td>
+            <td>ダイブ対応（40m）</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">トレーニング分析</td></tr>
+          <tr>
+            <td>トレーニング負荷</td>
+            <td>基本的</td>
+            <td class="winner-garmin">トレーニングステータス / 負荷 / 効果</td>
+          </tr>
+          <tr>
+            <td>リカバリー管理</td>
+            <td>基本的</td>
+            <td class="winner-garmin">Body Battery / リカバリータイム</td>
+          </tr>
+          <tr>
+            <td>耐久スコア</td>
+            <td>―</td>
+            <td class="winner-garmin">○（Endurance Score）</td>
+          </tr>
+          <tr>
+            <td>Hill Score</td>
+            <td>―</td>
+            <td class="winner-garmin">○</td>
+          </tr>
+          <tr>
+            <td>スポーツプロファイル数</td>
+            <td>多数</td>
+            <td class="winner-garmin">50+</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div id="tab-smart" class="tab-content">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>Apple Watch Ultra 3</th>
+            <th>Garmin fēnix 8 Pro</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="category-row"><td colspan="3">ヘルスケア</td></tr>
+          <tr>
+            <td>心拍センサー</td>
+            <td>光学式心拍</td>
+            <td>Elevate Gen 5 光学式心拍</td>
+          </tr>
+          <tr>
+            <td>ECG（心電図）</td>
+            <td>○</td>
+            <td>○</td>
+          </tr>
+          <tr>
+            <td>血中酸素</td>
+            <td>○</td>
+            <td>○（Pulse Ox）</td>
+          </tr>
+          <tr>
+            <td>高血圧検知</td>
+            <td class="winner-apple">○（通知機能）</td>
+            <td>―</td>
+          </tr>
+          <tr>
+            <td>睡眠トラッキング</td>
+            <td>睡眠スコア（新機能）</td>
+            <td class="winner-garmin">睡眠コーチ + 詳細分析</td>
+          </tr>
+          <tr>
+            <td>HRV ステータス</td>
+            <td>○</td>
+            <td>○</td>
+          </tr>
+          <tr class="category-row"><td colspan="3">スマートウォッチ機能</td></tr>
+          <tr>
+            <td>音声アシスタント</td>
+            <td class="winner-apple">Siri（Apple Intelligence）</td>
+            <td>音声コマンド（基本）</td>
+          </tr>
+          <tr>
+            <td>アプリストア</td>
+            <td class="winner-apple">App Store（豊富なアプリ）</td>
+            <td>Connect IQ Store</td>
+          </tr>
+          <tr>
+            <td>決済</td>
+            <td>Apple Pay</td>
+            <td>Garmin Pay</td>
+          </tr>
+          <tr>
+            <td>音楽ストレージ</td>
+            <td>○（Apple Music）</td>
+            <td>○（Spotify, Deezer, Amazon）</td>
+          </tr>
+          <tr>
+            <td>対応OS</td>
+            <td>iOS のみ</td>
+            <td class="winner-garmin">iOS + Android</td>
+          </tr>
+          <tr>
+            <td>通話</td>
+            <td class="winner-apple">○（5G セルラー）</td>
+            <td>○（LTE / Messenger経由）</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── VISUAL COMPARISON ── -->
+  <section class="chart-section">
+    <p class="section-label reveal">Visual Comparison</p>
+    <h2 class="section-title reveal">視覚で比べる</h2>
+
+    <div class="bar-chart reveal" id="barChart">
+      <div class="bar-item">
+        <p class="bar-label">バッテリー持続時間</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="10%">42h</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="95%">27日</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-item">
+        <p class="bar-label">GPS精度（マルチバンド対応度）</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="85%">L1/L5</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="95%">GNSS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-item">
+        <p class="bar-label">スマートウォッチ機能の充実度</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="95%">★★★</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="65%">★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-item">
+        <p class="bar-label">トレーニング分析の深さ</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="55%">★★</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="95%">★★★</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-item">
+        <p class="bar-label">コストパフォーマンス</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="80%">$799</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="55%">$1,199〜</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bar-item">
+        <p class="bar-label">地図 &amp; ナビゲーション</p>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-apple)">Apple</span>
+          <div class="bar-track">
+            <div class="bar-fill apple-fill" data-width="55%">基本</div>
+          </div>
+        </div>
+        <div class="bar-row">
+          <span class="bar-tag" style="color:var(--accent-garmin)">Garmin</span>
+          <div class="bar-track">
+            <div class="bar-fill garmin-fill" data-width="95%">TopoActive</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VERDICT ── -->
+  <section class="verdict-section">
+    <p class="section-label reveal">Verdict</p>
+    <h2 class="section-title reveal">どちらを選ぶべきか</h2>
+
+    <div class="verdict-grid reveal">
+      <div class="verdict-card apple-verdict">
+        <h3>Apple Watch Ultra 3 が向いている人</h3>
+        <p>iPhoneとのシームレスな連携を重視し、日常使いからアウトドアまで1台でカバーしたい方に最適です。</p>
+        <ul>
+          <li>iPhoneユーザーで統一されたエコシステムが欲しい</li>
+          <li>通知・アプリ・Siriを日常的に活用したい</li>
+          <li>シンプルで直感的なUIが好み</li>
+          <li>初めての本格スポーツウォッチとして</li>
+          <li>予算を抑えたい（$799）</li>
+        </ul>
+      </div>
+
+      <div class="verdict-card garmin-verdict">
+        <h3>Garmin fēnix 8 Pro が向いている人</h3>
+        <p>トレーニング分析やアウトドアナビゲーションの深さを求め、数日〜数週間の冒険に出かける方に最適です。</p>
+        <ul>
+          <li>マラソン・トレラン・登山を本格的にやる</li>
+          <li>バッテリー持続時間が最優先</li>
+          <li>詳細なトレーニング分析データが欲しい</li>
+          <li>オフグリッドでの安全性・通信が必要</li>
+          <li>Android ユーザー</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>© 2025 Smartwatch Comparison — 情報は 2025年9月時点の公式発表に基づいています</p>
+    <p style="margin-top:0.5rem;">Apple Watch は Apple Inc. の商標です。Garmin、fēnix は Garmin Ltd. の商標です。</p>
+  </footer>
+
+  <script>
+    // ── Tab switching ──
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // ── Scroll reveal ──
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    revealElements.forEach(el => observer.observe(el));
+
+    // ── Bar chart animation ──
+    const barChart = document.getElementById('barChart');
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fills = entry.target.querySelectorAll('.bar-fill');
+          fills.forEach((fill, i) => {
+            setTimeout(() => {
+              fill.style.width = fill.dataset.width;
+            }, i * 100);
+          });
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    barObserver.observe(barChart);
+  </script>
+</body>
+</html>
